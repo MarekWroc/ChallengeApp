@@ -23,5 +23,9 @@
         {
             this.score.Add(NewScore);
         }
+        public void SubtractScore(int NewScore)
+        {
+            this.score.Add(-NewScore);
+        }
     }
 }
