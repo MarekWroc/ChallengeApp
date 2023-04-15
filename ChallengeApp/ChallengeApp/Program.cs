@@ -1,43 +1,45 @@
-﻿int number = 7623;
+﻿using ChallengeApp;
 
-string numberInString = number.ToString();
-char[] letters = numberInString.ToCharArray();
+Employee employee1 = new Employee("Mariola", 22);
+Employee employee2 = new Employee("Antoni", 27);
+Employee employee3 = new Employee("Henryk", 31);
 
-int counter0 = 0;
-int counter1 = 0;
-int counter2 = 0;
-int counter3 = 0;
-int counter4 = 0;
-int counter5 = 0;
-int counter6 = 0;
-int counter7 = 0;
-int counter8 = 0;
-int counter9 = 0;
+employee1.AddScore(4);
+employee1.AddScore(5);
+employee1.AddScore(7);
+employee1.AddScore(2);
+employee1.AddScore(9);
 
-foreach (char c in letters)
+employee2.AddScore(9);
+employee2.AddScore(6);
+employee2.AddScore(7);
+employee2.AddScore(9);
+employee2.AddScore(4);
+
+employee3.AddScore(5);
+employee3.AddScore(3);
+employee3.AddScore(6);
+employee3.AddScore(2);
+employee3.AddScore(1);
+
+List<Employee> employees = new List<Employee>()
 {
-    if (c == '0') { counter0++; }
-    if (c == '1') { counter1++; }
-    if (c == '2') { counter2++; }
-    if (c == '3') { counter3++; }
-    if (c == '4') { counter4++; }
-    if (c == '5') { counter5++; }
-    if (c == '6') { counter6++; }
-    if (c == '7') { counter7++; }
-    if (c == '8') { counter8++; }
-    if (c == '9') { counter9++; }
+    employee1, employee2, employee3
+};
+
+int maxValue = 0;
+Employee employeeWithMaxValue = null;
+
+foreach(var employee in employees)
+{
+    if(employee.Value >  maxValue)
+    {
+        maxValue = employee.Value;
+        employeeWithMaxValue = employee;
+    }
 }
 
-Console.WriteLine("0 => " + counter0);
-Console.WriteLine("1 => " + counter1);
-Console.WriteLine("2 => " + counter2);
-Console.WriteLine("3 => " + counter3);
-Console.WriteLine("4 => " + counter4);
-Console.WriteLine("5 => " + counter5);
-Console.WriteLine("6 => " + counter6);
-Console.WriteLine("7 => " + counter7);
-Console.WriteLine("8 => " + counter8);
-Console.WriteLine("9 => " + counter9);
-
-
-
+Console.WriteLine("The winner is:...");
+Console.WriteLine(employeeWithMaxValue.Name + " !!!");
+Console.WriteLine("Lat - " + employeeWithMaxValue.Age);
+Console.WriteLine("Zwyciężył/a z liczbą punktów w ilości: " + maxValue);
