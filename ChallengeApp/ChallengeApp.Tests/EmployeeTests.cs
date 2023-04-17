@@ -3,19 +3,48 @@ namespace ChallengeApp.Tests
     public class EmployeeTests
     {
         [Test]
-        public void WhenEmployeeCollectPoints_ShouldReturnCorrectResult()
+        public void ShowsMinValue()
         {
-            // arrange
-            var employee = new Employee("Marek", 40);
+            
+            var employee = new Employee("Marek", "Marecki");
+
+            employee.AddScore(1);
             employee.AddScore(2);
-            employee.AddScore(7);
-            employee.SubtractScore(1); // or employee.AddScore(-1);
+            employee.AddScore(2);
+            
+            var statistic = employee.GetStatistics();
+            
+            Assert.AreEqual(1, statistic.Min);
+        }
+
+        [Test]
+        public void ShowsMaxValue()
+        {
+
+            var employee = new Employee("Marek", "Marecki");
+
+            employee.AddScore(5);
             employee.AddScore(4);
-            employee.SubtractScore(11); // or employee.AddScore(-11);
-            // act
-            var value = employee.Value;
-            // assert
-            Assert.AreEqual(1, value);
+            employee.AddScore(4);
+
+            var statistic = employee.GetStatistics();
+
+            Assert.AreEqual(5, statistic.Max);
+        }
+
+        [Test]
+        public void ShowsAverage()
+        {
+
+            var employee = new Employee("Marek", "Marecki");
+
+            employee.AddScore(2);
+            employee.AddScore(6);
+            employee.AddScore(4);
+
+            var statistic = employee.GetStatistics();
+
+            Assert.AreEqual(4, statistic.Average);
         }
     }
 }

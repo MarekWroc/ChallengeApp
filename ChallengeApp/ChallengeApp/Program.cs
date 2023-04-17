@@ -1,8 +1,8 @@
 ﻿using ChallengeApp;
 
-Employee employee1 = new Employee("Mariola", 22);
-Employee employee2 = new Employee("Antoni", 27);
-Employee employee3 = new Employee("Henryk", 31);
+Employee employee1 = new Employee("Mariola", "Kowalska");
+Employee employee2 = new Employee("Antoni", "Nowak");
+Employee employee3 = new Employee("Henryk", "Falewicz");
 
 employee1.AddScore(4);
 employee1.AddScore(5);
@@ -40,6 +40,5 @@ foreach(var employee in employees)
 }
 
 Console.WriteLine("The winner is:...");
-Console.WriteLine(employeeWithMaxValue.Name + " !!!");
-Console.WriteLine("Lat - " + employeeWithMaxValue.Age);
+Console.WriteLine(employeeWithMaxValue.Name + " " + employeeWithMaxValue.Surname +" !!!");
 Console.WriteLine("Zwyciężył/a z liczbą punktów w ilości: " + maxValue);

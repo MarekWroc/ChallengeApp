@@ -54,17 +54,17 @@
         public void GetEmployeeShouldReturnDiferentObjects() // check reference
         {
             // arrange
-            var employee1 = GetEmployee("Marek");
-            var employee2 = GetEmployee("Marek");
+            var employee1 = GetEmployee("Marek", "Marecki");
+            var employee2 = GetEmployee("Marek", "Marecki");
             // act
 
             // assert
             Assert.AreNotEqual(employee1, employee2);
         }
 
-        private Employee GetEmployee(string name)
+        private Employee GetEmployee(string name, string surname)
         {
-            return new Employee(name);
+            return new Employee(name, surname);
         }
     }
 }
