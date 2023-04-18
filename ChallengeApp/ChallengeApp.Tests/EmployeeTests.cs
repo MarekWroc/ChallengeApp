@@ -8,9 +8,9 @@ namespace ChallengeApp.Tests
             
             var employee = new Employee("Marek", "Marecki");
 
-            employee.AddScore(1);
-            employee.AddScore(2);
-            employee.AddScore(2);
+            employee.AddGrade(1);
+            employee.AddGrade(2);
+            employee.AddGrade(2);
             
             var statistic = employee.GetStatistics();
             
@@ -23,9 +23,9 @@ namespace ChallengeApp.Tests
 
             var employee = new Employee("Marek", "Marecki");
 
-            employee.AddScore(5);
-            employee.AddScore(4);
-            employee.AddScore(4);
+            employee.AddGrade(5);
+            employee.AddGrade(4);
+            employee.AddGrade(4);
 
             var statistic = employee.GetStatistics();
 
@@ -38,9 +38,9 @@ namespace ChallengeApp.Tests
 
             var employee = new Employee("Marek", "Marecki");
 
-            employee.AddScore(2);
-            employee.AddScore(6);
-            employee.AddScore(4);
+            employee.AddGrade(2);
+            employee.AddGrade(6);
+            employee.AddGrade(4);
 
             var statistic = employee.GetStatistics();
 
