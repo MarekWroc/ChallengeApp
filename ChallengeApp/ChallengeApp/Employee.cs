@@ -22,16 +22,16 @@
         public Statistics GetStatistics()
         {
             var statistics = new Statistics();
-            
-            statistics.Min = float.MaxValue;
-            statistics.Max = float.MinValue;
-            statistics.Average = 0;
 
+            statistics.Average = 0;
+            statistics.Max = float.MinValue;
+            statistics.Min = float.MaxValue;
+            
             foreach (var grade in this.grades)
             {
-                statistics.Average += grade;
+                statistics.Max = Math.Max(statistics.Max, grade);
                 statistics.Min = Math.Min(statistics.Min, grade);
-                statistics.Min = Math.Max(statistics.Max, grade);
+                statistics.Average += grade;
             }
 
             statistics.Average /= this.grades.Count;
