@@ -107,8 +107,8 @@ namespace ChallengeApp
             statistics.Max = float.MinValue;
             statistics.Min = float.MaxValue;
 
-            var i;
-            for (i = 0; i < this.grades.Count; i++)
+            
+            for (int i = 0; i < this.grades.Count; i++)
             {
                 statistics.Max = Math.Max(statistics.Max, grades[i]);
                 statistics.Min = Math.Min(statistics.Min, grades[i]);
