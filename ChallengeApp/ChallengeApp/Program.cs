@@ -9,8 +9,9 @@ Console.WriteLine("Podaj imię:");
 var name = Console.ReadLine();
 Console.WriteLine("Podaj nazwisko:");
 var surname = Console.ReadLine();
+var sex = 'M';
 
-var employee = new Employee(name, surname);
+var employee = new Employee(name, surname, sex);
 
 try
 {
