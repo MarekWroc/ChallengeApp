@@ -11,6 +11,12 @@ Console.WriteLine("Podaj nazwisko:");
 var surname = Console.ReadLine();
 
 var employee = new EmployeeInFile(name, surname);
+employee.GradeAdded += EmployeeGradeAdded;
+
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Ocena została dodana");
+}
 
 try
 {
