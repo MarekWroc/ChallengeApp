@@ -9,13 +9,12 @@ Console.WriteLine("Podaj imię:");
 var name = Console.ReadLine();
 Console.WriteLine("Podaj nazwisko:");
 var surname = Console.ReadLine();
-var sex = 'M';
 
-var employee = new Employee(name, surname, sex);
+var employee = new EmployeeInFile(name, surname);
 
 try
 {
-    Employee emp = null;
+    EmployeeInFile emp = null;
 
 }
 catch(Exception exception)
