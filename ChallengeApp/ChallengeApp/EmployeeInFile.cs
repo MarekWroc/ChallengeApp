@@ -15,16 +15,16 @@
         }
         public string Name { get; private set; }
         public string Surname { get; private set; }
-        
+
         public override void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)
             {
-                using(var writer = File.AppendText(fileName))
+                using (var writer = File.AppendText(fileName))
                 {
                     writer.WriteLine(grade);
 
-                    if(this.GradeAdded != null)
+                    if (this.GradeAdded != null)
                     {
                         GradeAdded(this, new EventArgs());
                     }
@@ -120,41 +120,17 @@
             return grades;
         }
         private Statistics CountStatistics(List<float> grades)
-        { 
+        {
             var statistics = new Statistics();
-            statistics.Average = 0;
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
 
             foreach (var grade in grades)
             {
-                if (grade >= 0)
+                if (grade >=0)
                 {
-                    statistics.Max = Math.Max(statistics.Max, grade);
-                    statistics.Min = Math.Min(statistics.Min, grade);
-                    statistics.Average += grade;
+                    statistics.AddGrade(grade);
                 }
             }
-            statistics.Average /= grades.Count;
 
-            switch (statistics.Average)
-            {
-                case var average when average >= 80:
-                    statistics.AverageLetter = 'A';
-                    break;
-                case var average when average >= 60:
-                    statistics.AverageLetter = 'B';
-                    break;
-                case var average when average >= 40:
-                    statistics.AverageLetter = 'C';
-                    break;
-                case var average when average >= 20:
-                    statistics.AverageLetter = 'D';
-                    break;
-                default:
-                    statistics.AverageLetter = 'E';
-                    break;
-            }
             return statistics;
         }
     }

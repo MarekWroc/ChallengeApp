@@ -5,31 +5,14 @@ Console.WriteLine("== Witaj w programie XYZ do oceny pracowników ==");
 Console.WriteLine(" ==============================================");
 Console.WriteLine();
 Console.WriteLine("Wprowadzasz dane pracownika.");
-Console.WriteLine("Podaj imię:");
-var name = Console.ReadLine();
-Console.WriteLine("Podaj nazwisko:");
-var surname = Console.ReadLine();
 
-var employee = new EmployeeInFile(name, surname);
+
+var employee = new EmployeeInFile("Marek", "Marecki");
 employee.GradeAdded += EmployeeGradeAdded;
 
 void EmployeeGradeAdded(object sender, EventArgs args)
 {
     Console.WriteLine("Ocena została dodana");
-}
-
-try
-{
-    EmployeeInFile emp = null;
-
-}
-catch(Exception exception)
-{
-    Console.WriteLine(exception.Message);
-}
-finally
-{
-    Console.WriteLine("Finally ...");
 }
 
 Console.WriteLine("Podaj ocenę pracownika:");
